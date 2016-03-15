@@ -93,6 +93,7 @@ forecast_daily <- read.csv("data/ExternalData/forecastio_daily_weather.csv", str
 forecast_daily <- unique(forecast_daily)
 beach_readings <- merge(x=beach_readings, y=forecast_daily, by.x=c("Client.ID", "Full_date"), by.y=c("beach", "time"), all.x = T, all.y = T)
 
+forecast_hourly <- read.csv("data/ExternalData/forecastio_hourly_weather.csv", stringsAsFactors = FALSE, row.names=NULL, header = T)
 
 # Build naive logit model (today like yesterday)
 # -----------------------------------------------------------
